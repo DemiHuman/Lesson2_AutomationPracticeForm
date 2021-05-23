@@ -29,7 +29,7 @@ public class TestRegForm {
     @BeforeAll
     static void MainSetup() {
         startMaximized = true;
-        holdBrowserOpen = true;
+        //holdBrowserOpen = true;
         browser = "chrome";
         //browser="firefox";
         //browser="ie";
