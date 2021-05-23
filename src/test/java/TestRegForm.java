@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Configuration.*;
 
 public class TestRegForm {
 
-     String firstName = "Тест",
+    String firstName = "Тест",
             lastName = "Тестов",
             email = "test@testov.com",
             mobile = "9111111111",
@@ -24,13 +24,13 @@ public class TestRegForm {
             state = "Haryana",
             city = "Karnal";
 
-     Logger logger = LoggerFactory.getLogger(TestRegForm.class);
+    Logger logger = LoggerFactory.getLogger(TestRegForm.class);
 
     @BeforeAll
     static void MainSetup() {
         startMaximized = true;
         holdBrowserOpen = true;
-        browser="chrome";
+        browser = "chrome";
         //browser="firefox";
         //browser="ie";
         //browser="edge";
@@ -78,7 +78,7 @@ public class TestRegForm {
                 text("Other"),
                 text(mobile),
                 text(day + " " + month + "," + year),
-                text(subject1  + ", " + subject2),
+                text(subject1 + ", " + subject2),
                 text("Sports, Reading, Music"),
                 text(currentAddress),
                 text(state + " " + city)
