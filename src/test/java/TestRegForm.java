@@ -29,45 +29,41 @@ public class TestRegForm {
     @BeforeAll
     static void MainSetup() {
         startMaximized = true;
-        //holdBrowserOpen = true;
         browser = "chrome";
-        //browser="firefox";
-        //browser="ie";
-        //browser="edge";
     }
 
     @Test
     void CheckRegistrationForm() {
         open("https://demoqa.com/automation-practice-form");
         //Name_&_Email
-        $("[id=firstName]").setValue(firstName);
-        $("[id=lastName]").setValue(lastName);
-        $("[id=userEmail]").setValue(email);
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(email);
         //Gender
-        $("[id=gender-radio-3]").parent().click();
+        $("#gender-radio-3").parent().click();
         //Mobile
-        $("[id=userNumber]").setValue(mobile);
+        $("#userNumber").setValue(mobile);
         //Date_Of_Birth
-        $("[id=dateOfBirthInput]").click();
+        $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").click();
         $(byText(month)).click();
         $(".react-datepicker__year-select").click();
         $(byText(year)).click();
         $(byText(day)).click();
         //Subjects
-        $("[id=subjectsInput]").setValue(subject1).pressEnter();
-        $("[id=subjectsInput]").setValue(subject2).pressEnter();
+        $("#subjectsInput").setValue(subject1).pressEnter();
+        $("#subjectsInput").setValue(subject2).pressEnter();
         //Hobbies
-        $("[id=hobbies-checkbox-1]").parent().click();
-        $("[id=hobbies-checkbox-2]").parent().click();
-        $("[id=hobbies-checkbox-3]").parent().click();
+        $("#hobbies-checkbox-1").parent().click();
+        $("#hobbies-checkbox-2").parent().click();
+        $("#hobbies-checkbox-3").parent().click();
         //Address
-        $("[id=currentAddress]").setValue(currentAddress);
+        $("#currentAddress").setValue(currentAddress);
         //State_&_City
-        $("[id=react-select-3-input]").setValue(state).pressEnter();
-        $("[id=react-select-4-input]").setValue(city).pressEnter();
+        $("#react-select-3-input").setValue(state).pressEnter();
+        $("#react-select-4-input").setValue(city).pressEnter();
         //Button_"Submit"
-        $("[id=submit]").click();
+        $("#submit").click();
         logger.info("The filling was completed successfully!");
 
 
@@ -84,7 +80,8 @@ public class TestRegForm {
                 text(state + " " + city)
         );
 
-        $("[id=closeLargeModal").click();
+        $("#closeLargeModal").click();
+        $(".modal-content").shouldBe(disappear);
         logger.info("The check was completed successfully!");
     }
 }
