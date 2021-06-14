@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Configuration.*;
 
 
-public class TestRegForm {
+public class TestRegForm extends MainSetup {
 
     String firstName = "Тест",
             lastName = "Тестов",
@@ -24,13 +24,7 @@ public class TestRegForm {
             state = "Haryana",
             city = "Karnal";
 
-    Logger logger = LoggerFactory.getLogger(TestRegForm.class);
-
-    @BeforeAll
-    static void MainSetup() {
-        startMaximized = true;
-        browser = "chrome";
-    }
+    //Logger logger = LoggerFactory.getLogger(TestRegForm.class);
 
     @Test
     void CheckRegistrationForm() {
@@ -64,7 +58,7 @@ public class TestRegForm {
         $("#react-select-4-input").setValue(city).pressEnter();
         //Button_"Submit"
         $("#submit").click();
-        logger.info("The filling was completed successfully!");
+        //logger.info("The filling was completed successfully!");
 
 
         //Checking_After_The_Filling_Reg_Form
@@ -82,6 +76,6 @@ public class TestRegForm {
 
         $("#closeLargeModal").click();
         $(".modal-content").shouldBe(disappear);
-        logger.info("The check was completed successfully!");
+        //logger.info("The check was completed successfully!");
     }
 }
